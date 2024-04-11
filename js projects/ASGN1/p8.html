@@ -1,0 +1,26 @@
+<html>
+    <head>
+        <script>
+            function find_max(x)
+            {
+                x=x.split(" ");
+                var max=0;
+                for(var i=0;i<x.length;i++)
+                {
+                    if(x[i].length>x[max].length)
+                    {
+                        max=i;
+                    }
+                }
+                d1.innerHTML="Maximum Length of word = "+x[max].length + "<br>Word = "+x[max]
+            }
+        </script>
+    </head>
+    <body>
+        <form>
+            Enter String:<input type="text" id="t1">
+            <input type="button" value="Max_Length" onclick="find_max(t1.value)"><br>
+            <div id="d1"></div>
+        </form>
+    </body>
+</html>

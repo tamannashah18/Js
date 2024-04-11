@@ -1,0 +1,17 @@
+<!-- Write a JavaScript program to get the width and height of the window (any time the
+window is resized) -->
+<html>
+    <head>
+        <script>
+            function resize()
+            {
+                var h=document.documentElement.clientHeight;
+                var w=document.documentElement.clientWidth;
+                d1.innerHTML="Height: "+h+" Width : "+w;
+            }
+        </script>
+    </head>
+    <body onload="resize()" onresize="resize()">
+        <div id="d1"></div>
+    </body>
+</html>

@@ -1,0 +1,19 @@
+<html>
+    <head>
+        <script>
+            function get_ext(x)
+            {
+                x=x.split(".");
+                x=x[x.length-1];
+                d1.innerHTML="Entension is ."+x;
+            }
+        </script>
+    </head>
+    <body>
+        <form>
+            Enter File Name:<input type="text" id="t1">
+            <input type="button" value="Case Convert" onclick="get_ext(t1.value)"><br>
+            <div id="d1"></div>
+        </form>
+    </body>
+</html>

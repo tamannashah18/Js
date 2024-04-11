@@ -1,0 +1,53 @@
+<html>
+    <head>
+        <script>
+            var a=[],cnt=0,b=[];
+            function Merge_sort()
+            {
+                d1.innerHTML+="<br>Array 1 is: "+a+"<br>"
+                d1.innerHTML+="Array 2 is: "+b+"<br>"
+
+                a.sort((a,b)=>{return a-b});
+                b.sort((a,b)=>{return a-b});
+                
+                var j=a.length;
+                for(i=0;i<b.length;i++)
+                {
+                    a[j++]=b[i]
+                }
+                a.sort((a,b)=>{return a-b});
+                d1.innerHTML+="Sorted Array is: "+a
+            }
+        function add(x)
+        {
+            if(array.value=="A")
+            {
+                a.push(parseInt(x))
+                d1.innerHTML=d1.innerHTML+"<br>"+"ARRAY : A<br>ADDED NUMBER : "+x  
+                y1.value="" 
+            }
+            else if (array.value=="B")
+            {
+                b.push(parseInt(x))
+                d1.innerHTML=d1.innerHTML+"<br>"+"ARRAY : B<br>ADDED NUMBER : "+x  
+                y1.value="" 
+            }
+            else
+            {
+                alert("Select Array!")
+            }
+        }
+        </script>
+    </head>
+    <body>
+        <select id="array">
+            <option value="-1">Select ARRAY</option>
+            <option value="A">Array 1</option>
+            <option value="B">Array 2</option>
+        </select>
+        <br>
+        Enter Numbers(press enter key to add numbers)<input id="y1" onchange="add(y1.value)" type ="number"><br>
+        <input type="button" value="Sort Both Arrays" onclick="Merge_sort()"><br>
+        <div id="d1"></div>
+    </body>
+</html>

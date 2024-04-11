@@ -1,0 +1,64 @@
+<html>
+    <head>
+        <script src="./js/p1.js">
+            function vali()
+            {
+                tax.innerHTML="hello";
+                if(check_no(num.value,d1)==false)
+                {
+                    alert("Enter valid bill no");
+                    
+                    if(check_disc(dt.value,d4)==false)
+                    {
+                        alert("Enter valid amount");
+                        
+                        if(check_no(amt.value,d3)==false)
+                        {
+                            alert("Enter valid amount");
+                        }
+                    }
+                }
+                else
+                {
+                    calc_bill(dis,tax,tot,amt.value);
+                }
+                
+            }
+        </script>
+    </head>
+    <body>
+        <form method="post">
+            Enter Bill No.<input type="number" id="num" oninput="check_no(this.value,d1)"><span id="d1"></span><br>
+            Enter Bill Date<input type="date" id="dt" oninput="check_disc(this.value,d4)"><br>
+            Enter Bill Amount<input type="number" id="amt" oninput="check_no(this.value,d3)"><span id="d3"></span><br>
+            Enter Discount Percentage<span id="d4"></span><br>
+            DISCOUNT:<span id="dis"></span><br>
+            TAX(5%):<span id="tax"></span><br>
+            NET PAYMENT<span id="tot"></span><br><br>
+            Click to calculate<input type="button" value="Generate Bill" onclick="vali()"><br>
+        </form>
+        <script>function vali()
+            {
+                if(check_no(num.value,d1)==false)
+                {
+                    alert("Enter valid Bill no");
+                    
+                    if(check_disc(dt.value,d4)==false)
+                    {
+                        alert("Enter valid Date");
+                        
+                        if(check_no(amt.value,d3)==false)
+                        {
+                            alert("Enter valid Amount");
+                        }
+                    }
+                }
+                else
+                {
+                    calc_bill(dis,tax,tot,amt.value);
+                }
+                
+            }
+        </script>
+    </body>
+</html>

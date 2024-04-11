@@ -1,0 +1,92 @@
+<html>
+    <head>
+        <!-- //Hotel Amenities 
+         
+          
+        (Note: All above mentioned Fields are Yes / No) 
+        Based on selection by user, derive hotel Category: 
+        If Amenities =< 3 Than 3 Star Hotel 
+        If Amenities = 4 Than 4star Hotel 
+        If Amenities > = 5 Than 5 star Hotel 
+          -->
+        
+        <script>
+            
+            var sel=["con","pool","gym","wifi","food","cc","recp"];
+            function Print()
+            {
+                var y=0,n=0,al=0;
+                for(let i=0;i<sel.length;i++)
+                {
+                     var check=document.getElementsByName(sel[i]);
+                     {
+                        if(check[0].checked==false && check[1].checked==false)
+                        {
+                            alert("Select if you have "+sel[i]+" Amenity");
+                            al++;
+                        }
+                        else if(check[0].checked==true)
+                        {
+                            y++;
+                        }
+                        else
+                        {
+                            n++;
+                        }
+                     }
+                }
+                if(al!=0)
+                {
+                    if(y<=3)
+                    {
+                        alert("Hotel "+t1.value+" is a 3 star hotel")
+                    }
+                    else if(y==4)
+                    {
+                        alert("Hotel "+t1.value+" is a 4 star hotel")
+                    }
+                    else if(y>=5)
+                    {
+                        alert("Hotel "+t1.value+" is a 5 star hotel")
+                    }
+                }
+            }
+
+            function rad()
+            {
+                var r
+            }
+        </script>
+    </head>
+    <body>
+        <form method="post">
+            Enter Hotel Name<input type="text" id="t1"><br>
+            SELECT AMENETIES<br>
+            CONFERENCE ROOM:
+            &nbsp<input type="radio" id="con1" name="con" value="yes" onclick="rad(this)">Yes&nbsp;
+            <input type="radio" id="con2" name="con" value="no" onclick="rad()">No<br>
+            SWIMMING POOL:
+            &nbsp<input type="radio" id="pool1" name="pool" value="yes">Yes&nbsp;
+            <input type="radio" id="pool2" name="pool" value="no">No<br>
+            GYM:
+            &nbsp<input type="radio" id="gym1" name="gym" value="yes">Yes&nbsp;
+            <input type="radio" id="gym2" name="gym" value="no">No<br>
+            WIFI:
+            &nbsp<input type="radio" id="wifi1" name="wifi" value="yes">Yes&nbsp;
+            <input type="radio" id="wifi2" name="wifi" value="no">No<br>
+            24 HOUR RESTARAUNT:
+            &nbsp<input type="radio" id="food1" name="food" value="yes">Yes&nbsp;
+            <input type="radio" id="food2" name="food" value="no">No<br>
+            CREDIT CARD SERVICE:
+            &nbsp<input type="radio" id="cc1" name="cc" value="yes">Yes&nbsp;
+            <input type="radio" id="cc2" name="cc" value="no">No<br>
+            24 HOUR RECEPTION:
+            &nbsp<input type="radio" id="recp1" name="recp" value="yes">Yes&nbsp;
+            <input type="radio" id="recp2" name="recp" value="no">No<br>
+
+            <input type="button" value="Generate Rating" onclick="Rate()"><br>
+        </form>
+        <div id="d1">Information:</div>
+
+    </body>
+</html>

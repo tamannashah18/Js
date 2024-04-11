@@ -1,0 +1,21 @@
+<!-- 20. Write a JavaScript function to get the value of the all the attributes( href, hreflang, rel,
+target, and type attributes) of the specified hyperlink and image -->
+<html>
+    <head>
+        <script>
+            function get()
+            {
+                d1.innerHTML+=a1.getAttribute('href');
+                d1.innerHTML+=a1.getAttribute('hreflang')+"<br>"+a1.getAttribute('rel')+"<br>"+a1.getAttribute('target')+"<br>"+a1.getAttribute('type')+"<br>"+i1.getAttribute('src')+"<br>"+i1.getAttribute('alt')+"<br>";
+            }
+        </script>
+    </head>
+    <body>
+        <img src="pic.PNG" alt="windows home pg" id="i1" height="200" width="200"><br><br>
+        <a href="p10.html" rel="admin" hreflang="en" target="_blank" id="a1" type="text/css">CLICK ME</a>
+        <br><br>
+        <input type="button" value="get attributes" onclick="get()">
+        <br><br>
+        <div id="d1"></div>
+    </body>
+</html>

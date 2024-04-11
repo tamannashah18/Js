@@ -1,0 +1,23 @@
+<html>
+    <head>
+        <script>
+            var arr=[],cnt=0;
+            function str_arr()
+            {
+                arr.push(t1.value)
+                d1.innerHTML=d1.innerHTML+"<br>"+"Added String : "+t1.value  
+                t1.value="" 
+            }
+            function str_jn()
+            {
+                d1.innerHTML=d1.innerHTML+"<br>"+"JOINED String : "+arr.join("+") 
+            }
+        </script>
+    </head>
+    <body>
+        Enter Word<input type ="text" id="t1">
+        <input type="button" value="Add to array" onclick="str_arr()"><br>
+        <input type="button" value="Join" onclick="str_jn()"><br>
+        <div id="d1"></div>
+    </body>
+</html>

@@ -1,0 +1,38 @@
+<html>
+    <head>
+        <script>
+            function Add_date(x)
+            {
+                x=parseInt(x);
+                var dt=new Date();
+                var h=dt.getHours();
+                var m=dt.getMinutes();
+                m=m+x;
+                if(m>60)
+                {
+                    h=h+1;
+                    m=m-60;
+                    if(h>24)
+                    {
+                        var d=dt.getDate();
+                        h=h-24;
+                        d=d+1;
+                        dt.setDate(d)
+                    }
+                    dt.setHours(h)
+                }
+                dt.setMinutes(m)
+                console.log(dt);
+                d1.innerHTML=dt;
+
+            }
+        </script>
+    </head>
+    <body>
+        <form>
+            Enter Minutes to add(<= 60):<input type="text" id="t1">
+            <input type="button" value="Add Minutes" onclick="Add_date(t1.value)"><br>
+        </form>
+        <div id="d1"></div>
+    </body>
+</html>

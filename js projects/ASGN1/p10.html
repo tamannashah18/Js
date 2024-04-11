@@ -1,0 +1,19 @@
+<html>
+    <head>
+        <script>
+            function check_yr()
+            {
+                var dt=new Date();
+                var yr=dt.getFullYear();
+                if(yr%4==0)
+                    d1.innerHTML=yr+" is a LEAP YEAR"
+                else
+                    d1.innerHTML=yr+" is a NOT A LEAP YEAR"
+            }
+        </script>
+    </head>
+    <body>
+        <input type="button" value="Check Year" onclick="check_yr()"><br>
+        <div id="d1"></div>
+    </body>
+</html>

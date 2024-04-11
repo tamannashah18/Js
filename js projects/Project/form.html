@@ -1,0 +1,218 @@
+<html>
+    <head>
+        <script src="form_val.js"></script>
+        <script>
+            var cnt = localStorage.getItem("count") || 0; 
+            function stud()
+            {
+                this.spid=sp.value;
+                this.nm=nm.value;
+                this.email=email.value;
+                this.prog=[];
+                var p = document.getElementsByName("lang");
+                for(let i=0;i<p.length;i++)
+                {
+                    if(p[i].checked==true)
+                    {
+                        this.prog.push(p[i].value);
+                    }
+                }
+                p=document.getElementsByName("gen");
+                if(p[0].checked==true)                
+                    this.gender="Male";
+                else
+                    this.gender="Female";
+                this.state=state.value;
+                this.city=city.value;
+                this.uname=uname.value
+                this.pass=p2.value;
+            }
+            function check_valid()
+            { 
+                if(val_sp(sp.value,e1)==true && val_nm(nm.value,e1)==true && val_mail(email.value,e2)==true&& val_gen(document.getElementsByName("gen"),e3)==true && val_state(state.value,e5)==true &&val_uname(uname.value,e6)==true&&val_pass(p1.value,p2.value,e7)==true)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }                
+            }
+            function check_unique()
+            {
+                var s1=0,u=0;
+                    for(let i=0;i<cnt;i++)
+                    {
+                        var key="stud" + i;
+                        var studentData = localStorage.getItem(key);
+                        if(studentData == null) continue;
+                        var student = JSON.parse(studentData);
+                        if(sp.value==student.spid)
+                        {
+                            alert("THE SPID ALREADY EXISTS");
+                            s1++;
+                            return false;
+                        }
+                    }
+                    for(let i=0;i<cnt;i++)
+                    {
+                        var key="stud" + i;
+                        var studentData = localStorage.getItem(key);
+                        if(studentData == null) continue;
+                        var student = JSON.parse(studentData);
+                        if(uname.value==student.uname)
+                        {
+                            alert("THE USERNAME ALREADY EXSITS");
+                            u++;
+                            return false;
+                        }
+                    }
+                    if(s1==0 && u==0)
+                    {
+                        return true;
+                    }
+            }
+            function add_stud()
+            {
+                if(check_valid()==true && check_unique()==true )
+                {
+                    var s=new stud();
+                    cnt=localStorage.getItem("count"); 
+                    var key="stud" + cnt;
+                    localStorage.setItem(key, JSON.stringify(s));                    
+                    cnt++;
+                    localStorage.setItem("count",cnt);                 
+                    alert("Data Saved");
+                }
+                else
+                {
+                    alert("Enter valid data")
+                }
+            }
+            function populate()
+            {
+                if(state.value=="Gujarat")
+                {
+                    city.options[0]=new Option("Select city","")
+                    city.options[1]=new Option("Surat","Surat")
+                    city.options[2]=new Option("Ahemdabad","Ahemdabad")
+                }
+                else if(state.value=="Maharastra")
+                {
+                    city.options[0]=new Option("Select city","")
+                    city.options[1]=new Option("Mumbai","Mumbai")
+                    city.options[2]=new Option("Pune","Pune")
+                }
+            }
+            function del()
+            {
+                    for(let i=0;i<cnt;i++)
+                    {
+                        var key="stud" + i;
+                        var studentData = localStorage.getItem(key);
+                        if(studentData == null) continue;
+                        var student = JSON.parse(studentData);
+                        if(sp.value==student.spid)
+                        {
+                            alert("THE DELETED USER's SPID IS "+student.spid+"Username: "+student.uname);
+                            localStorage.removeItem("stud" + i);
+                            break;                            
+                        }
+                    }                
+            }
+            function disp()
+            {
+            var d1 = document.getElementById("d1");
+            d1.innerHTML = ""; 
+            if (cnt > 0) 
+            {
+                d1.innerHTML = "<table><tr><td>SPID</td><td>Name</td><td>Gender</td><td>Email</td><td>Programming Languages</td><td>State</td><td>City</td><td>User Name</td></tr>";
+                for (let i = 0; i < cnt; i++) {
+                    var key="stud" + i;
+                    var studentData = localStorage.getItem(key);
+                    if(studentData == null) continue;
+                    var student = JSON.parse(studentData);
+                    d1.innerHTML += "<tr><td>" + student.spid + "</td><td>" + student.nm + "</td><td>" + student.gender + "</td><td>" + student.email + "</td><td>" + student.prog + "</td><td>" + student.state + "</td><td>" + student.city + "</td><td>" + student.uname + "</td></tr>";
+                }
+                d1.innerHTML += "</table>";
+            } else 
+            {
+                d1.innerHTML = "NO DATA EXISTS";
+            }
+            }
+            </script>
+    </head>
+    <body>
+        <form id="f1">
+            <table>
+                <tr>
+                    <td>SPID</td>
+                    <td><input type="text" id="sp" oninput="val_sp(this.value,e1)"></td>
+                    <td id="e1"></td>
+                </tr>
+                <tr>
+                    <td>Name</td>
+                    <td><input type="text" id="nm" oninput="val_nm(this.value,e2)"></td>
+                    <td id="e2"></td>
+                </tr>
+                <tr onmouseover="val_gen(document.getElementsByName('gen'),e3)">
+                    <td>Gender</td>
+                    <td><input type="radio" name="gen" value="male"> Male<input type="radio" name="gen" value="female"> Female</td>
+                    <td id="e3"></td>
+                </tr>
+                <tr>
+                    <td>Email</td>
+                    <td><input type="email" id="email" oninput="val_mail(this.value,e4)"></td>
+                    <td id="e4"></td>
+                </tr>
+                <tr>
+                    <td>Programming Languages</td>
+                    <td colspan="2">
+                        <input type="checkbox" id="l1" name="lang" value="c">C
+                        <input type="checkbox" id="l2" name="lang" value="cpp">C++
+                        <input type="checkbox" id="l3" name="lang" value="py">Python
+                        <input type="checkbox" id="l4" name="lang" value="sql">SQL
+                    </td>
+                </tr>
+                <tr onmouseover="val_state(state,e5)">
+                    <td>State</td>
+                    <td>
+                        <select id="state" onchange="populate()" >
+                            <option value=""></option>
+                            <option value="Gujarat">Gujarat</option>
+                            <option value="Maharastra">Maharastra</option>
+                        </select>
+                    </td>
+                    <td id="e5"></td>
+                </tr>
+                <tr>
+                    <td>City</td>
+                    <td><select id="city"></select></td>
+                    <td id="e6"></td>
+                </tr>
+                <tr>
+                    <td>User Name</td>
+                    <td><input type="text" id="uname" oninput="val_uname(this.value,e6)"></td>
+                    <td id="e7"></td>
+                </tr>
+                <tr>
+                    <td>Password</td>
+                    <td><input type="password" id="p1" oninput="val_pass(p1.value,p2.value,e7)"></td>
+                    <td id="e8"></td>
+                </tr>
+                <tr>
+                    <td>Confirm Password</td>
+                    <td><input type="password" id="p2" oninput="val_pass(p1.value,p2.value,e8)"></td>
+                    <td id="e9"></td>
+                </tr>
+                <tr>
+                    <td><input type="button" id="register" value="register" onclick="add_stud()"></td>
+                    <td><input type="button" id="delete" value="delete" onclick="del()"></td>
+                    <td><input type="button" id="display" value="display" onclick="setTimeout(disp,2000)"></td>
+                </tr>
+            </table>
+            ALREADY HAVE AN ACCOUNT? <a href="login.html">LOGIN</a>
+        </form>
+        <div id="d1"></div>
+    </body>
+</html>

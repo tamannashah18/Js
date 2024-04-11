@@ -1,0 +1,31 @@
+<html>
+    <head>
+        <script>
+            function count()
+            {
+                var s=document.getElementById("s")
+                var arr=[]
+                for(var i=0;i<s.length;i++)
+                {
+                    arr[i]=s[i].value;
+                }
+                alert("CITY LIST IS:      "+arr+"      No of items ="+s.length)
+            }
+        </script>
+    </head>
+    <body>
+        <form method="post">
+            CHOOSE CITY<br>
+            <select id="s">
+                <option>Surat</option>
+                <option>Ahemdabad</option>
+                <option>Mumbai</option>
+                <option>Banglore</option>
+                <option>Kolkata</option>
+            </select><br>
+            <input type="button" value="Submit" onclick="count()"><br>
+        </form>
+        <div id="d1">Information:</div>
+
+    </body>
+</html>

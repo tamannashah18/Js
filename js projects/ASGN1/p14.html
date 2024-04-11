@@ -1,0 +1,28 @@
+<html>
+    <head>
+        <script>
+            var arr=[],sum=0;
+            function add(x)
+            {
+                arr.push(parseInt(x));
+                d1.innerHTML=d1.innerHTML+"<br>"+"ADDED NUMBER : "+x;
+                t1.value=""
+            }
+            function sum1()
+            {
+                for(let i=0;i<arr.length;i++)
+                {
+                    sum=sum+arr[i];
+                }
+                d2.innerHTML="<br><br>SUM IS: "+sum
+            }
+        </script>
+    </head>
+    <body>
+        Enter Numbers<input id="t1" type ="text">
+        <input type="button" value="Add Number" onclick="add(t1.value)"><br>
+        <input type="button" value="Sum" onclick="sum1()"><br>
+        <div id="d1"></div>
+        <div id="d2"></div>
+    </body>
+</html>

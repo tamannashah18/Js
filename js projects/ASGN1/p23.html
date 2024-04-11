@@ -1,0 +1,27 @@
+<html>
+    <head>
+       
+    </head>
+    <body>
+
+        <input type="button" value="CHANGE COLOR " onclick="col()">
+        <input type="text" id="t1">
+        <br><br>
+        <p>ParagraphParagraphParagraphParagraphParagraphParagraph</p>
+        <p>
+        ParagraphParagraphParagraphParagraphParagraphParagraphParagraph
+        ParagraphParagraphParagraphParagraphParagraphParagraphParagraph
+        </p>       
+    <script>    
+        function col()
+        {
+            var a=document.querySelectorAll("p")
+            for(var i=0;i<a.length;i++)
+            {
+                a[i].style.color=t1.value;
+            }
+
+        }
+    </script>
+    </body>
+</html>

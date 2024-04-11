@@ -1,0 +1,53 @@
+<html>
+    <head>
+        <script>
+            function populate()
+            {
+                
+                var i=0
+                var city=[]
+                if(country.value=="India")
+                {
+                    city=["SURAT","AHEMDABAD","MUMBAI"];
+                }
+                else if(country.value=="UK")
+                {
+                    city=["LONDON","BIRMINGHAM","YORK"];
+                }
+                else if(country.value=="USA")
+                {
+                    city=["NEW YORK","HOUSTON","BOSTON"];
+                }
+                else if(country.value=="Australia")
+                {
+                    city=["SYDNEY","NSW","MELBOURNE"];
+                }else if(country.value==" ")
+                {
+                    alert("Select country")
+                }
+                else{
+                c.options[0]=new Option("Select City"," ");
+
+                for(i=0;i<city.length;i++)
+                    c.options[i+1]=new Option(city[i],city[i]);
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <form method="post">
+            CHOOSE country<br>
+            <select id="country">
+                <option value=" ">Select country</option>
+                <option value="India">India</option>
+                <option value="USA">USA</option>
+                <option value="Australia">Australia</option>
+                <option value="UK">UK</option>
+            </select>
+            <br>
+            <input type="button" value="populate" onclick="populate()">
+            <br>
+            <select id="c"></select>
+        </form>
+    </body>
+</html>

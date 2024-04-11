@@ -1,0 +1,42 @@
+<!-- 29. Validate a form using JavaScript. Display error message in red color. If no errors, show
+success message in green color. Form should contain following fields.
+Name (should not be blank), age (15 to 20), gender (required field) -->
+<html>
+    <head>
+        <script src="validate.js">
+            
+        </script>
+    </head>
+    <body>
+        <form>
+            Enter Name: <input type="text" id="t1" oninput="val_name(this,s1)">
+            <span id="s1"></span><br>
+            Enter Age: <input type="number" id="a1" oninput="val_age(this,s2)">
+            <span id="s2"></span><br>
+            Enter Gender
+                <script>
+                    var x=document.getElementsByName("gen")
+                </script>
+                <span id="s4" onmouseover="val_gen(x,s3)">
+                <input type="radio" id="g1" name="gen" value="Male">Male
+                &nbsp
+                <input type="radio" id="g1"name="gen" value="Male">Female 
+                <span id="s3"></span>
+            </span><br>
+            <input type="button" value="Submit" onclick="val()">
+        </form>
+        <script>
+            function val()
+            {
+                if(val_name(t1,s1)==true && val_age(a1,s2)==true &&val_gen(x,s3)==true )
+                {
+                            alert("Submission Completed");
+                }
+                else
+                {
+                    alert("Please submit valid information");
+                }
+            }
+        </script>
+    </body>
+</html>

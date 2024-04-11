@@ -1,0 +1,28 @@
+<!-- 21. Write a JavaScript function to add rows to a table. -->
+<html>
+    <head>
+       
+    </head>
+    <body>
+        <input type="button" value="Add row" onclick="add_rows()">
+        <table id="tab" border="1">
+            <tr>
+                <td>hello</td>
+                <td>hello</td>
+                <td>hello</td>
+            </tr>
+        </table>
+        
+    <script>
+        function add_rows()
+        {
+           var x=tab.insertRow()
+           for(i=0;i<3;i++)
+           {
+               let y=x.insertCell();
+               y.innerHTML="New";
+           }
+        }
+    </script>
+    </body>
+</html>

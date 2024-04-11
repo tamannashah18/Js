@@ -1,0 +1,53 @@
+<html>
+    <head>
+        <script>
+            var arr=[],cnt=0;
+            function Bin_search()
+            {
+                arr.sort((a,b)=>{return a-b});
+                d1.innerHTML=d1.innerHTML+"<br><br>"+"Sorted array : ";
+                for(let i=0;i<arr.length;i++)
+                {
+                    d1.innerHTML=d1.innerHTML+"<br>"+arr[i]
+                }
+                var high=arr.length-1;
+                var low=arr[0];
+                var mid;
+                while(low<=high)
+                {
+                    mid=Math.floor((high+low)/2)
+                    if(arr[mid]==parseInt(t2.value))
+                    {
+                        alert("Number found at index "+mid)
+                        cnt=cnt+1;
+                        break;
+                    }
+                    else if(arr[mid]<parseInt(t2.value))
+                    {
+                        low=mid+1
+                    }
+                    else
+                    {
+                        high=mid-1
+                    }
+                }
+                if(cnt==0)
+                {
+                    alert("Value not inserted in the array");
+                }
+            }
+        function add(x)
+        {
+            arr.push(parseInt(x))
+            d1.innerHTML=d1.innerHTML+"<br>"+"ADDED NUMBER : "+x  
+            y1.value="" 
+        }
+        </script>
+    </head>
+    <body>
+        Enter Numbers(press enter key to add numbers)<input id="y1" onchange="add(y1.value)" type ="number"><br>
+        <br>Enter Value to be Searched<input id="t2" type ="number">
+        <input type="button" value="Search value" onclick="Bin_search()"><br>
+        <div id="d1"></div>
+    </body>
+</html>

@@ -1,0 +1,20 @@
+<html>
+    <head>
+        <script>
+            function func()
+            {
+                var cd=new Date();
+                var dt=new Date(d.value);
+                var diff=cd.getTime()-dt.getTime();
+                diff=Math.floor(diff/(1000*60*60*24));
+                d1.innerHTML="DIFFERENCE IS : "+diff
+
+            }
+        </script>
+    </head>
+    <body>
+        Enter date<input type="date" id="d"></input>
+        <input type="button" value="CALCULATE DIFFERENCE" onclick="func()">
+        <div id="d1"></div>
+    </body>
+</html>

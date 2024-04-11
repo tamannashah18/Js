@@ -1,0 +1,19 @@
+<html>
+    <head>
+        <script>
+            function age(y)
+            {
+                console.log(y);
+                y=y.split("-");
+                var dt=new Date();
+                var a=dt.getFullYear()-parseInt(y[0]);
+                d1.innerHTML="Age(in years) =  " + a;
+            }
+        </script>
+    </head>
+    <body>
+        SELECT FULL DATE<input id="y1" type ="date"><br>
+        <input type="button" value="Calculate Age" onclick="age(y1.value)"><br>
+        <div id="d1">hello</div>
+    </body>
+</html>

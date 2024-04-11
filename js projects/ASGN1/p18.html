@@ -1,0 +1,19 @@
+<html>
+    <head>
+        <script>
+            var arr=[],cnt=0;
+            function str_arr()
+            {
+                arr=t1.value.split(d.value)
+                d1.innerHTML=d1.innerHTML+"<br>"+"ARRAY : "+arr
+                t1.value="" 
+            }
+        </script>
+    </head>
+    <body>
+        Enter String:   <input type ="text" id="t1"><br>
+        Enter Delimiter:<input type ="text" id="d"><br>
+        <input type="button" value="Convert to array" onclick="str_arr()"><br>
+        <div id="d1"></div>
+    </body>
+</html>

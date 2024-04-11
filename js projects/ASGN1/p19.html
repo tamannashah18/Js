@@ -1,0 +1,23 @@
+ <html>
+    <head>
+        <script>
+            function url()
+            {
+                var arr=t1.value.split("://")
+                d1.innerHTML+="Input: "+t1.value+"<br>Output:"
+                d1.innerHTML+="<br>Protocol: "+arr[0]
+                arr=arr[1].split("/")
+                d1.innerHTML+="<br>Domain: "+arr[0]
+                arr=arr[1].split(".")
+                d1.innerHTML+="<br>Page: "+arr[0]
+                d1.innerHTML+="<br>Extension : "+arr[1]
+                t1.value="" 
+            }
+        </script>
+    </head>
+    <body>
+        Enter URL:   <input type ="text" id="t1"><br>
+        <input type="button" value="Segment URL" onclick="url()"><br>
+        <div id="d1"></div>
+    </body>
+</html>

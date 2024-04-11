@@ -1,0 +1,32 @@
+<html>
+    <head>
+        <script>
+            function prime()
+            {
+                var x=parseInt(t1.value);
+                if(x==1 || x==0)
+                    d1.innerHTML="SPECIAL NO."
+                else
+                {
+                    var cnt=0;
+                    for(var i=1;i<=x;i++)
+                    {
+                        if(x%i==0)
+                            cnt++;
+                    }
+                    if(cnt==2)
+                        d1.innerHTML="PRIME NO."
+                    else
+                        d1.innerHTML="NOT A PRIME NO."
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <form>
+            Enter Number:<input type="text" id="t1">
+            <input type="button" value="Check Prime" onclick="prime()"><br>
+            <div id="d1"></div>
+        </form>
+    </body>
+</html>

@@ -1,0 +1,34 @@
+<!-- 21. Write a JavaScript function to add rows to a table. -->
+<html>
+    <head>
+       
+    </head>
+    <body>
+        <h1>heading 1</h1>
+        <h2>heading 2</h2>
+
+        <h1>heading 3</h1>
+        <h2>heading 4</h2>
+
+        <h1>heading 5</h1>
+        <h2>heading 6</h2>
+
+        <h1>heading 7</h1>
+        <h1>heading 8</h1>
+        <input type="button" value="Count H1 " onclick="count()">
+
+        <div id="d1"></div>
+    <script>    
+        function count()
+        {
+            var a=document.querySelectorAll("h1")
+            for(let i=0;i<a.length;i++)
+            {
+                d1.innerHTML+=a[i].innerHTML+"<br>"
+            }
+            d1.innerHTML+="COUNT: " +a.length
+
+        }
+    </script>
+    </body>
+</html>
