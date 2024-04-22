@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Budget Visualizer</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+
+</head>
+<body>
+  <div class="container">
+    <h1>Budgeting Visualizer</h1>
+    <div class="income-section">
+      <h2>Income</h2>
+      <input type="number" id="income-input" placeholder="Enter your income">
+      <button id="add-income">Add Income</button>
+    </div>
+    <div class="expense-section">
+      <h2>Expenses</h2>
+      <input type="text" id="expense-name" placeholder="Expense name">
+      <input type="number" id="expense-amount" placeholder="Expense amount">
+      <select id="expense-category">
+        <option value="Survival_Expenses">Other Expenses</option>
+        <option value="groceries">Groceries</option>
+        <option value="entertainment">Entertainment/Luxury</option>
+      </select>
+      <button id="add-expense">Add Expense</button>
+    </div>
+    <div class="budget-section">
+      <h2>Budget</h2>
+      <div>
+        <span>Income: </span>
+        <span id="total-income">0</span>
+      </div>
+      <div>
+        <span>Expenses: </span>
+        <span id="total-expenses">0</span>
+      </div>
+      <div>
+        <span>Balance: </span>
+        <span id="balance">0</span>
+      </div>
+      <!-- Inside the budget-section div -->
+<div>
+    <h2>Comparison with 50-30-20 Rule</h2>
+    <table id="comparison-table">
+      <thead>
+        <tr>
+          <th>Category</th>
+          <th>Max Limit</th>
+          <th>Actual Amount</th>
+          <th>Balance</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Survival Expenses(50%)</td>
+          <td id="expense-limit">0.00</td>
+          <td id="expense-actual">0.00</td>
+          <td id="expense-difference">0.00</td>
+        </tr>
+        <tr>
+          <td>Savings(30%)</td>
+          <td id="savings-limit">0.00</td>
+          <td id="savings-actual">0.00</td>
+          <td id="savings-difference">0.00</td>
+        </tr>
+        <tr>
+          <td>Luxury (Entertainment)(20%)</td>
+          <td id="luxury-limit">0.00</td>
+          <td id="luxury-actual">0.00</td>
+          <td id="luxury-difference">0.00</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  
+    </div>
+    <div class="visualizations">
+      <h2>Visualizations</h2>
+      <canvas id="expense-chart"></canvas>
+    </div>
+    
+    <div class="expense-table">
+        <h2>Expense Table</h2>
+        <table id="expense-table">
+          <thead>
+            <tr>
+              <th>Expense Name</th>
+              <th>Amount</th>
+              <th>Category</th>
+            </tr>
+          </thead>
+          <tbody id="expense-table-body">
+          </tbody>
+        </table>
+      </div>  
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>

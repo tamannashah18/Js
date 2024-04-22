@@ -1,0 +1,97 @@
+body {
+    
+    background-color: beige;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+  }
+  
+  .container {
+    background-color:#107c77;
+    color: beige;
+    max-width: 900px;
+    margin: 0 auto;
+    padding:20px;
+    border: 5px solid #ccc;
+    border-radius: 5px;
+    text-shadow: black 1px 1px;
+  }
+  
+  h1, h2 {
+    text-align: center;
+  }
+  
+  .income-section,
+  .expense-section,
+  .budget-section,
+  .visualizations {
+    
+    text-shadow: gainsboro 1px 1px;
+    color: black;
+    background-color: beige;
+    margin-bottom: 20px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  input[type="number"],
+  input[type="text"],
+  select {
+    padding: 5px;
+    margin-right: 10px;
+  }
+  
+  button {
+    padding: 5px 10px;
+    background-color: #107c77;
+    color:beige;
+    border: none;
+    border-radius: 5px;
+  }
+  
+  #expense-chart {
+    max-width: 100%;
+    height: 250px;
+  }
+
+  #expense-table,#comparison-table {
+    border-collapse: collapse;
+    width: 100%;    
+    align-items: center;
+  }
+  #expense-table th {
+    background-color: beige;
+    text-shadow: gainsboro 1px 1px;
+    color: black;
+    padding: 8px;
+    text-align: center;
+    
+  }
+  #comparison-table th {
+    color: beige;
+    text-shadow: black 1px 1px;
+    background-color:#107c77;
+    padding: 8px;
+    text-align: center;
+    
+  }
+  #expense-table td,#comparison-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+    
+  }
+  #expense-table tbody tr:nth-child(even){
+    background-color: beige;
+    text-shadow: gainsboro 1px 1px;
+    color: black;
+    
+  }
+  #comparison-table tbody tr:nth-child(even)
+  {
+    
+    text-shadow: black 1px 1px;
+    background-color:#107c77;
+    color: beige;
+  }
